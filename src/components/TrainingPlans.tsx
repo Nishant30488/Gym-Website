@@ -27,7 +27,6 @@ interface TrainingPlan {
   benefits: string[];
 }
 
-
 const IMAGES = {
   strength: '/images/training/strength-training.jpg',
   hiit: '/images/training/hiit-workout.jpg',
@@ -43,7 +42,6 @@ const IMAGES = {
   abs: '/images/training/abs-workout.jpg',
   functional: '/images/training/functional-training.jpg'
 };
-
 
 const trainingPlans: TrainingPlan[] = [
   {
@@ -67,7 +65,9 @@ const trainingPlans: TrainingPlan[] = [
       { name: 'Barbell Squat', sets: 5, reps: '5', description: 'Focus on form and progressive overload' },
       { name: 'Bench Press', sets: 5, reps: '5', description: 'Keep shoulders retracted and feet planted' },
       { name: 'Deadlift', sets: 3, reps: '5', description: 'Maintain neutral spine throughout' },
-      { name: 'Military Press', sets: 4, reps: '8', description: 'Press overhead with controlled movement' }
+      { name: 'Military Press', sets: 4, reps: '8', description: 'Press overhead with controlled movement' },
+      { name: 'Barbell Row', sets: 4, reps: '8', description: 'Build back and core strength', form_tips: ['Keep back flat', 'Pull to lower chest', 'Control the descent'] },
+      { name: 'Pull-Ups', sets: 3, reps: 'Max', description: 'Bodyweight back and arm builder', form_tips: ['Full range of motion', 'Engage lats', 'Avoid swinging'] }
     ]
   },
   {
@@ -91,7 +91,9 @@ const trainingPlans: TrainingPlan[] = [
       { name: 'Burpees', sets: 4, reps: '20', description: 'Explosive movement with full body engagement' },
       { name: 'Mountain Climbers', sets: 4, reps: '30 each leg', description: 'Keep core tight and maintain pace' },
       { name: 'Box Jumps', sets: 4, reps: '15', description: 'Land softly and maintain control' },
-      { name: 'Battle Ropes', sets: 4, reps: '30 seconds', description: 'Alternate waves with high intensity' }
+      { name: 'Battle Ropes', sets: 4, reps: '30 seconds', description: 'Alternate waves with high intensity' },
+      { name: 'Jump Rope Sprints', sets: 4, reps: '1 min', description: 'High-speed skipping for cardio', form_tips: ['Stay light on feet', 'Keep elbows in', 'Maintain rhythm'] },
+      { name: 'Dumbbell Thrusters', sets: 3, reps: '15', description: 'Full body HIIT finisher', form_tips: ['Squat deep', 'Explode overhead', 'Control descent'] }
     ]
   },
   {
@@ -115,7 +117,9 @@ const trainingPlans: TrainingPlan[] = [
     exercises: [
       { name: 'Sun Salutation', sets: 3, reps: '1 flow', description: 'Flow through each pose mindfully' },
       { name: 'Warrior Sequence', sets: 2, reps: '1 flow', description: 'Focus on alignment and breathing' },
-      { name: 'Hip Opening Series', sets: 2, reps: '30-60s hold', description: 'Hold each pose with proper form' }
+      { name: 'Hip Opening Series', sets: 2, reps: '30-60s hold', description: 'Hold each pose with proper form' },
+      { name: 'Seated Forward Fold', sets: 2, reps: '45s hold', description: 'Stretch hamstrings and lower back', form_tips: ['Keep spine long', 'Reach forward gently'] },
+      { name: "Child's Pose", sets: 2, reps: '1 min hold', description: 'Relax and stretch back/hips', form_tips: ['Relax shoulders', 'Breathe deeply'] }
     ]
   },
   {
@@ -139,7 +143,9 @@ const trainingPlans: TrainingPlan[] = [
     exercises: [
       { name: 'Clean and Jerk', sets: 5, reps: '3-3-3-3-3', description: 'Focus on explosive power' },
       { name: 'Muscle Ups', sets: 4, reps: '5-8', description: 'Strict form with full lockout' },
-      { name: 'Double Unders', sets: 3, reps: '50', description: 'Maintain rhythm and posture' }
+      { name: 'Double Unders', sets: 3, reps: '50', description: 'Maintain rhythm and posture' },
+      { name: 'Wall Balls', sets: 4, reps: '20', description: 'Full body power and cardio', form_tips: ['Squat low', 'Explode up', 'Hit target'] },
+      { name: 'Rowing Sprints', sets: 4, reps: '250m', description: 'Max effort on rower', form_tips: ['Drive with legs', 'Finish with arms'] }
     ]
   },
   {
@@ -163,7 +169,9 @@ const trainingPlans: TrainingPlan[] = [
     exercises: [
       { name: 'Pull-ups', sets: 4, reps: '8-12', description: 'Full range of motion with controlled descent' },
       { name: 'Handstand Progression', sets: 3, reps: '30s hold', description: 'Wall-assisted to free-standing' },
-      { name: 'Pistol Squats', sets: 3, reps: '5 each leg', description: 'Focus on balance and control' }
+      { name: 'Pistol Squats', sets: 3, reps: '5 each leg', description: 'Focus on balance and control' },
+      { name: 'Dips', sets: 3, reps: '10-15', description: 'Triceps and chest builder', form_tips: ['Keep elbows close', 'Lower fully'] },
+      { name: 'Hollow Body Hold', sets: 3, reps: '30s', description: 'Core stability', form_tips: ['Press lower back to floor', 'Point toes'] }
     ]
   },
   {
@@ -193,6 +201,20 @@ const trainingPlans: TrainingPlan[] = [
         reps: '10-12',
         description: 'Focus on middle chest activation',
         form_tips: ['Control the descent', 'Keep core tight', 'Natural elbow path']
+      },
+      {
+        name: 'Cable Flyes',
+        sets: 3,
+        reps: '12-15',
+        description: 'Isolate chest fibers with a deep stretch',
+        form_tips: ['Slight bend in elbows', 'Squeeze at peak contraction']
+      },
+      {
+        name: 'Dips (Chest Lean)',
+        sets: 3,
+        reps: '10-12',
+        description: 'Emphasize lower chest',
+        form_tips: ['Lean forward', 'Go deep', 'Avoid locking elbows']
       }
     ]
   },
@@ -216,6 +238,20 @@ const trainingPlans: TrainingPlan[] = [
         reps: '8-12',
         description: 'Primary lat builder',
         form_tips: ['Full stretch at bottom', 'Squeeze at top', 'Control descent']
+      },
+      {
+        name: 'Barbell Bent-Over Row',
+        sets: 4,
+        reps: '8-10',
+        description: 'Build thickness in the mid-back',
+        form_tips: ['Flat back', 'Pull to lower chest', 'Pause at top']
+      },
+      {
+        name: 'Seated Cable Row',
+        sets: 3,
+        reps: '12',
+        description: 'Focus on squeezing shoulder blades together',
+        form_tips: ['Neutral grip', 'Slow negative']
       }
     ]
   },
@@ -239,6 +275,20 @@ const trainingPlans: TrainingPlan[] = [
         reps: '5-8',
         description: 'Primary leg builder',
         form_tips: ['Keep chest up', 'Drive through heels', 'Break parallel']
+      },
+      {
+        name: 'Leg Press',
+        sets: 4,
+        reps: '10-12',
+        description: 'Heavy compound for quad mass',
+        form_tips: ['Feet shoulder-width', 'Do not lock knees']
+      },
+      {
+        name: 'Romanian Deadlift',
+        sets: 4,
+        reps: '8-10',
+        description: 'Hamstring and glute focus',
+        form_tips: ['Hinge at hips', 'Slight knee bend', 'Feel the stretch']
       }
     ]
   },
@@ -281,6 +331,13 @@ const trainingPlans: TrainingPlan[] = [
         reps: '12-10-8',
         description: 'Decreasing weights with no rest',
         form_tips: ['Start heavy', 'Reduce weight by 20-30%', 'Minimal rest between drops']
+      },
+      {
+        name: 'Incline Dumbbell Press',
+        sets: 4,
+        reps: '10',
+        description: 'Upper chest and shoulder focus',
+        form_tips: ['Press at 30-45°', 'Control the descent']
       }
     ]
   },
@@ -317,6 +374,13 @@ const trainingPlans: TrainingPlan[] = [
         reps: '12-15',
         description: 'Side deltoid focus with perfect form',
         form_tips: ['Lead with elbows', 'Slight forward lean', 'Control the movement']
+      },
+      {
+        name: 'Face Pulls',
+        sets: 3,
+        reps: '15',
+        description: 'Rear deltoid and upper back',
+        form_tips: ['Pull to forehead', 'Elbows high', 'Squeeze at end']
       }
     ]
   },
@@ -352,6 +416,13 @@ const trainingPlans: TrainingPlan[] = [
         reps: '12 each',
         description: 'Three exercises back to back',
         form_tips: ['Pushdowns', 'Overhead extensions', 'Close-grip pushups']
+      },
+      {
+        name: 'Hammer Curls',
+        sets: 3,
+        reps: '12',
+        description: 'Brachialis and forearm focus',
+        form_tips: ['Neutral grip', 'No swinging']
       }
     ]
   },
@@ -388,6 +459,13 @@ const trainingPlans: TrainingPlan[] = [
         reps: '15 each side',
         description: 'Rotational core strength',
         form_tips: ['Pivot feet', 'Keep arms straight', 'Control the motion']
+      },
+      {
+        name: 'Hanging Leg Raises',
+        sets: 3,
+        reps: '12',
+        description: 'Lower ab and hip flexor focus',
+        form_tips: ['No swinging', 'Raise legs to parallel']
       }
     ]
   },
@@ -399,30 +477,36 @@ const trainingPlans: TrainingPlan[] = [
     duration: '8 weeks',
     description: 'Comprehensive functional training program to improve everyday movement patterns and athletic performance.',
     image: IMAGES.functional,
-    calories: '500-700 per session',
-    equipment: ['Kettlebells', 'Medicine Ball', 'Resistance Bands', 'Suspension Trainer'],
+    calories: '350-500 per session',
+    equipment: ['Kettlebells', 'Medicine Ball', 'Resistance Bands', 'Bodyweight'],
     targetMuscles: ['Full Body', 'Core', 'Stabilizers'],
     benefits: [
-      'Improved movement patterns',
-      'Better coordination',
-      'Enhanced flexibility',
-      'Increased functional strength',
-      'Injury prevention'
+      'Better movement patterns',
+      'Injury prevention',
+      'Improved balance and coordination',
+      'Enhanced athleticism'
     ],
     exercises: [
       {
-        name: 'Turkish Get-Up',
-        sets: 3,
-        reps: '5 each side',
-        description: 'Full-body functional movement',
-        form_tips: ['Start light', 'Focus on form', 'Keep eye on weight']
-      },
-      {
         name: 'Kettlebell Flow',
         sets: 4,
-        reps: '1 minute',
+        reps: '1 minute reps',
         description: 'Continuous movement pattern',
         form_tips: ['Swing to clean', 'Clean to press', 'Press to windmill']
+      },
+      {
+        name: 'Medicine Ball Slams',
+        sets: 4,
+        reps: '15',
+        description: 'Explosive full body power',
+        form_tips: ['Use whole body', 'Explode down', 'Absorb impact with knees']
+      },
+      {
+        name: 'Band-Resisted Lateral Walks',
+        sets: 3,
+        reps: '20 steps',
+        description: 'Hip and glute activation',
+        form_tips: ['Keep tension on band', 'Stay low']
       }
     ]
   }
@@ -440,20 +524,28 @@ const TrainingPlans: React.FC = () => {
   const [selectedPlan, setSelectedPlan] = useState<TrainingPlan | null>(null);
   const [showAllPlans, setShowAllPlans] = useState(false);
 
+  useEffect(() => {
+    if (selectedPlan) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedPlan]);
+
   const filteredPlans = useMemo(() => {
     return trainingPlans.filter(plan => {
       const matchesSearch = plan.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         plan.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         plan.targetMuscles.some(muscle => muscle.toLowerCase().includes(searchQuery.toLowerCase()));
-      
       const matchesCategory = selectedCategory === 'All' || plan.category === selectedCategory;
       const matchesLevel = selectedLevel === 'All' || plan.level === selectedLevel;
       const matchesBodyPart = selectedBodyPart === 'All' || plan.bodyPart === selectedBodyPart;
-
       return matchesSearch && matchesCategory && matchesLevel && matchesBodyPart;
     });
   }, [searchQuery, selectedCategory, selectedLevel, selectedBodyPart]);
-
   const displayedPlans = showAllPlans ? filteredPlans : filteredPlans.slice(0, 6);
 
   return (
@@ -478,42 +570,42 @@ const TrainingPlans: React.FC = () => {
             Discover specialized workout programs designed to help you achieve your fitness goals.
           </p>
         </motion.div>
-          <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  setSelectedCategory(category);
+                  if (category === 'Body Part') {
+                    setSelectedBodyPart('All');
+                  }
+                }}
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
+                  ${selectedCategory === category
+                    ? 'bg-red-500 text-white'
+                    : 'bg-gray-800/50 text-gray-200 hover:bg-gray-700/50'}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          {selectedCategory === 'Body Part' && (
             <div className="flex flex-wrap justify-center gap-2">
-              {categories.map((category) => (
+              {bodyParts.map((part) => (
                 <button
-                  key={category}
-                  onClick={() => {
-                    setSelectedCategory(category);
-                    if (category === 'Body Part') {
-                      setSelectedBodyPart('All');
-                    }
-                  }}
+                  key={part}
+                  onClick={() => setSelectedBodyPart(part)}
                   className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
-                    ${selectedCategory === category
+                    ${selectedBodyPart === part
                       ? 'bg-red-500 text-white'
                       : 'bg-gray-800/50 text-gray-200 hover:bg-gray-700/50'}`}
                 >
-                  {category}
+                  {part}
                 </button>
               ))}
             </div>
-            {selectedCategory === 'Body Part' && (
-              <div className="flex flex-wrap justify-center gap-2">
-                {bodyParts.map((part) => (
-                  <button
-                    key={part}
-                    onClick={() => setSelectedBodyPart(part)}
-                    className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300
-                      ${selectedBodyPart === part
-                        ? 'bg-red-500 text-white'
-                        : 'bg-gray-800/50 text-gray-200 hover:bg-gray-700/50'}`}
-                  >
-                    {part}
-                  </button>
-                ))}
-              </div>
-            )}
+          )}
         </div>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedPlans.map((plan) => (
@@ -523,7 +615,6 @@ const TrainingPlans: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className="glass-effect rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-red-500/10 hover:border-red-500/50 hover:scale-[1.02] transition-all duration-300"
-              onClick={() => setSelectedPlan(plan)}
             >
               <div className="aspect-w-16 aspect-h-9 relative overflow-hidden">
                 <img
@@ -540,10 +631,26 @@ const TrainingPlans: React.FC = () => {
                 <p className="text-gray-200 leading-relaxed mt-2">
                   {plan.description}
                 </p>
+                <button
+                  className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition-colors duration-300"
+                  onClick={() => setSelectedPlan(plan)}
+                >
+                  Know More
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
+        {filteredPlans.length > 6 && (
+          <div className="flex justify-center mt-8">
+            <button
+              className="px-8 py-3 bg-gray-800 text-white rounded-full font-semibold shadow-lg hover:bg-red-500 hover:text-white transition-colors duration-300"
+              onClick={() => setShowAllPlans((prev) => !prev)}
+            >
+              {showAllPlans ? 'Show Less' : 'Show All Plans'}
+            </button>
+          </div>
+        )}
         <AnimatePresence>
           {selectedPlan && (
             <div 
@@ -598,32 +705,39 @@ const TrainingPlans: React.FC = () => {
                     <div>
                       <p className="text-gray-200 text-lg leading-relaxed">{selectedPlan.description}</p>
                     </div>
-                    {selectedPlan.benefits && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="text-xl font-semibold text-white mb-4">Benefits</h4>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {selectedPlan.benefits.map((benefit, index) => (
-                            <li key={index} className="flex items-center text-gray-300">
-                              <svg className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                              <span>{benefit}</span>
-                            </li>
+                        <h4 className="text-lg font-semibold text-white mb-2">Target Muscles</h4>
+                        <ul className="list-disc list-inside text-gray-300">
+                          {selectedPlan.targetMuscles.map((muscle, idx) => (
+                            <li key={idx}>{muscle}</li>
                           ))}
                         </ul>
                       </div>
-                    )}
-                    <div>
-                      <h4 className="text-xl font-semibold text-white mb-4">Required Equipment</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedPlan.equipment.map((item) => (
-                          <span
-                            key={item}
-                            className="px-4 py-2 bg-gray-800/50 rounded-lg text-sm text-gray-300 border border-gray-700"
-                          >
-                            {item}
-                          </span>
-                        ))}
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Who is this for?</h4>
+                        <p className="text-gray-300">{selectedPlan.level} trainees looking to {selectedPlan.benefits[0]?.toLowerCase() || 'improve their fitness'}.</p>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Session Duration</h4>
+                        <p className="text-gray-300">{selectedPlan.duration}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white mb-2">Calories Burned</h4>
+                        <p className="text-gray-300">{selectedPlan.calories}</p>
+                      </div>
+                      <div className="md:col-span-2">
+                        <h4 className="text-lg font-semibold text-white mb-2">Required Equipment</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedPlan.equipment.map((item) => (
+                            <span
+                              key={item}
+                              className="px-4 py-2 bg-gray-800/50 rounded-lg text-sm text-gray-300 border border-gray-700"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <div>
@@ -653,6 +767,23 @@ const TrainingPlans: React.FC = () => {
                           </div>
                         ))}
                       </div>
+                    </div>
+                    <div className="flex justify-center gap-4 mt-8">
+                      <button
+                        className="px-6 py-3 bg-green-500 text-white rounded-lg font-semibold hover:bg-green-600 transition-colors duration-300"
+                        onClick={() => {
+                          const message = encodeURIComponent(`Hello sir, I want to book a session for this training plan: ${selectedPlan.name}`);
+                          window.open(`https://wa.me/?text=${message}`, '_blank');
+                        }}
+                      >
+                        Book Session
+                      </button>
+                      <button
+                        className="px-6 py-3 bg-gray-700 text-white rounded-lg font-semibold hover:bg-red-500 hover:text-white transition-colors duration-300"
+                        onClick={() => setSelectedPlan(null)}
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -111,7 +111,7 @@ const Header: React.FC = () => {
               aria-label="Contact on WhatsApp"
             >
               <img 
-                src="/images/whatsapp.svg" 
+                src="/images/WhatsApp.svg" 
                 alt="WhatsApp" 
                 className="w-5 h-5"
               />
@@ -225,7 +225,7 @@ const Header: React.FC = () => {
                     aria-label="Contact on WhatsApp"
                   >
                     <img 
-                      src="/images/whatsapp.svg" 
+                      src="/images/WhatsApp.svg" 
                       alt="WhatsApp" 
                       className="w-5 h-5"
                     />
