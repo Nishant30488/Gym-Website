@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-gradient-to-br from-black via-gray-900 to-gray-800 min-h-screen text-white;
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  
+  /* Ensure favicon is properly sized */
+  link[rel="icon"], link[rel="apple-touch-icon"] {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:from-red-700 hover:to-red-800 hover:shadow-lg hover:shadow-red-500/25;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-gray-700 to-gray-800 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:from-gray-800 hover:to-gray-900 hover:shadow-lg hover:shadow-gray-500/10;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-5 lg:px-6;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-transparent bg-clip-text;
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-700 hover:border-red-500/50;
+  }
+
+  .input-field {
+    @apply bg-gray-800/50 border border-gray-700 text-white rounded-lg px-4 py-3 focus:ring-2 focus:ring-red-500 focus:border-red-500;
+  }
+
+  .nav-link {
+    @apply text-gray-300 hover:text-red-500 transition-colors duration-200;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-red-500/25;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #000000, #1a1a1a, #2d2d2d);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(to right, #dc2626, #991b1b);
+}
+
+/* Glass Effect */
+.glass-effect {
+  @apply backdrop-blur-lg bg-black/20 border border-gray-800;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-red-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-red-700;
+}
+
+/* Custom scrollbar for modals */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-800 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-red-500 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-red-600;
+}
+
+/* Enhanced hover effects */
+.trainer-card {
+  @apply transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-red-500/20 hover:border-red-500/50;
+}
+
+.trainer-image {
+  @apply transition-all duration-500 hover:scale-105 hover:brightness-110;
+}
+
+.social-icon {
+  @apply transition-all duration-300 transform hover:scale-125 hover:rotate-6;
+}
